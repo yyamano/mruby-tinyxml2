@@ -421,6 +421,15 @@ xml_node_delete_child(mrb_state *mrb, mrb_value self)
   return mrb_nil_value();
 }
 
+static mrb_value
+xml_node_print(mrb_state *mrb, mrb_value self)
+{
+  XMLNode *node = static_cast<XMLNode*>(DATA_PTR(self));
+  XMLPrinter printer;
+  node->Accept(&printer);
+  return mrb_str_new_cstr(mrb, printer.CStr());
+}
+
 /* XMLDocument */
 static mrb_value
 xml_document_initialize(mrb_state *mrb, mrb_value self)
@@ -511,15 +520,6 @@ xml_document_root_element(mrb_state *mrb, mrb_value self)
   struct RData *element = mrb_data_object_alloc(mrb, xml_element_class,
 						doc->RootElement(), &xml_element_type);
   return mrb_obj_value(element);
-}
-
-static mrb_value
-xml_document_print(mrb_state *mrb, mrb_value self)
-{
-  XMLDocument *doc = static_cast<XMLDocument*>(DATA_PTR(self));
-  XMLPrinter printer;
-  doc->Print(&printer);
-  return mrb_str_new_cstr(mrb, printer.CStr());
 }
 
 static mrb_value
@@ -1089,6 +1089,7 @@ mrb_mruby_tinyxml2_gem_init(mrb_state* mrb)
   mrb_define_method(mrb, xml_node_class,           "link_after_child",         xml_node_insert_after_child,       ARGS_REQ(2));
   mrb_define_method(mrb, xml_node_class,           "delete_children",          xml_node_delete_children,          ARGS_NONE());
   mrb_define_method(mrb, xml_node_class,           "delete_child",             xml_node_delete_child,             ARGS_REQ(1));
+  mrb_define_method(mrb, xml_node_class,           "print",                    xml_node_print,                    ARGS_NONE());
 
   /* XMLDocument */
   mrb_define_method(mrb, xml_document_class,       "initialize",               xml_document_initialize,           ARGS_NONE());
@@ -1101,7 +1102,6 @@ mrb_mruby_tinyxml2_gem_init(mrb_state* mrb)
   mrb_define_method(mrb, xml_document_class,       "has_bom",                  xml_document_has_bom,              ARGS_NONE());
   mrb_define_method(mrb, xml_document_class,       "set_bom",                  xml_document_set_bom,              ARGS_REQ(1));
   mrb_define_method(mrb, xml_document_class,       "root_element",             xml_document_root_element,         ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "print",                    xml_document_print,                ARGS_NONE());
   mrb_define_method(mrb, xml_document_class,       "new_element",              xml_document_new_element,          ARGS_REQ(1));
   mrb_define_method(mrb, xml_document_class,       "new_comment",              xml_document_new_comment,          ARGS_REQ(1));
   mrb_define_method(mrb, xml_document_class,       "new_text",                 xml_document_new_text,             ARGS_REQ(1));
