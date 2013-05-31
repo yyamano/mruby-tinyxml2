@@ -424,8 +424,10 @@ xml_node_delete_child(mrb_state *mrb, mrb_value self)
 static mrb_value
 xml_node_print(mrb_state *mrb, mrb_value self)
 {
+  mrb_bool compact = false;
+  mrb_get_args(mrb, "|b", &compact);
   XMLNode *node = static_cast<XMLNode*>(DATA_PTR(self));
-  XMLPrinter printer;
+  XMLPrinter printer(NULL, static_cast<bool>(compact));
   node->Accept(&printer);
   return mrb_str_new_cstr(mrb, printer.CStr());
 }
@@ -1089,7 +1091,7 @@ mrb_mruby_tinyxml2_gem_init(mrb_state* mrb)
   mrb_define_method(mrb, xml_node_class,           "link_after_child",         xml_node_insert_after_child,       ARGS_REQ(2));
   mrb_define_method(mrb, xml_node_class,           "delete_children",          xml_node_delete_children,          ARGS_NONE());
   mrb_define_method(mrb, xml_node_class,           "delete_child",             xml_node_delete_child,             ARGS_REQ(1));
-  mrb_define_method(mrb, xml_node_class,           "print",                    xml_node_print,                    ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "print",                    xml_node_print,                    ARGS_OPT(1));
 
   /* XMLDocument */
   mrb_define_method(mrb, xml_document_class,       "initialize",               xml_document_initialize,           ARGS_NONE());
