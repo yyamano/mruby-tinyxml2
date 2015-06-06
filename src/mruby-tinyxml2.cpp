@@ -12,7 +12,7 @@ xml_object_free(mrb_state *mrb, void *ptr)
 {
 }
 
-static void 
+static void
 xml_document_free(mrb_state *mrb, void *ptr)
 {
   delete static_cast<XMLDocument*>(ptr);
@@ -389,12 +389,12 @@ xml_node_insert_after_child(mrb_state *mrb, mrb_value self)
   mrb_value child;
   XMLNode *node = static_cast<XMLNode*>(DATA_PTR(self));
   mrb_get_args(mrb, "oo", &prev_child, &child);
-  if (!mrb_obj_is_kind_of(mrb, child, xml_node_class) && 
+  if (!mrb_obj_is_kind_of(mrb, child, xml_node_class) &&
       !mrb_obj_is_kind_of(mrb, prev_child, xml_node_class)) {
     mrb_raise(mrb, E_ARGUMENT_ERROR, "expect XMLNode");
   }
 
-  XMLNode *ptr = node->InsertAfterChild(static_cast<XMLNode*>(DATA_PTR(prev_child)), 
+  XMLNode *ptr = node->InsertAfterChild(static_cast<XMLNode*>(DATA_PTR(prev_child)),
 					static_cast<XMLNode*>(DATA_PTR(child)));
   return xml_node_alloc(mrb, ptr);
 }
@@ -796,7 +796,7 @@ xml_element_set_attribute(mrb_state *mrb, mrb_value self)
     break;
 
   case MRB_TT_STRING:
-    element->SetAttribute(name, static_cast<char*>(mrb_string_value_cstr(mrb, &value)));
+    element->SetAttribute(name, static_cast<const char*>(mrb_string_value_cstr(mrb, &value)));
     break;
 
   default:
@@ -949,7 +949,7 @@ xml_attribute_set_attribute(mrb_state *mrb, mrb_value self)
     break;
 
   case MRB_TT_STRING:
-    attribute->SetAttribute(static_cast<char*>(mrb_string_value_cstr(mrb, &value)));
+    attribute->SetAttribute(static_cast<const char*>(mrb_string_value_cstr(mrb, &value)));
     break;
 
   default:
