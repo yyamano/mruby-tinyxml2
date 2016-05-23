@@ -1065,104 +1065,104 @@ mrb_mruby_tinyxml2_gem_init(mrb_state* mrb)
   MRB_SET_INSTANCE_TT(xml_const_attribute_class,   MRB_TT_DATA);
 
   /* XMLNode */
-  mrb_define_method(mrb, xml_node_class,           "initialize",               xml_node_initialize,               ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "initialize",               xml_node_initialize,               MRB_ARGS_NONE());
   /* TODO: get_document */
-  mrb_define_method(mrb, xml_node_class,           "to_element",               xml_node_to_element,               ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "to_text",                  xml_node_to_text,                  ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "to_comment",               xml_node_to_comment,               ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "to_document",              xml_node_to_document,              ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "to_declaration",           xml_node_to_declaration,           ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "to_unknown",               xml_node_to_unknown,               ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "value",                    xml_node_value,                    ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "set_value",                xml_node_set_value,                ARGS_REQ(1));
-  mrb_define_method(mrb, xml_node_class,           "parent",                   xml_node_parent,                   ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "no_children",              xml_node_no_children,              ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "first_child",              xml_node_first_child,              ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "first_child_element",      xml_node_first_child_element,      ARGS_OPT(1));
-  mrb_define_method(mrb, xml_node_class,           "last_child",               xml_node_last_child,               ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "last_child_element",       xml_node_last_child_element,       ARGS_OPT(1));
-  mrb_define_method(mrb, xml_node_class,           "previous_sibling",         xml_node_previous_sibling,         ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "previous_sibling_element", xml_node_previous_sibling_element, ARGS_OPT(1));
-  mrb_define_method(mrb, xml_node_class,           "next_sibling",             xml_node_next_sibling,             ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "next_sibling_element",     xml_node_next_sibling_element,     ARGS_OPT(1));
-  mrb_define_method(mrb, xml_node_class,           "insert_end_child",         xml_node_insert_end_child,         ARGS_REQ(1));
-  mrb_define_method(mrb, xml_node_class,           "link_end_child",           xml_node_link_end_child,           ARGS_REQ(1));
-  mrb_define_method(mrb, xml_node_class,           "link_first_child",         xml_node_insert_first_child,       ARGS_REQ(1));
-  mrb_define_method(mrb, xml_node_class,           "link_after_child",         xml_node_insert_after_child,       ARGS_REQ(2));
-  mrb_define_method(mrb, xml_node_class,           "delete_children",          xml_node_delete_children,          ARGS_NONE());
-  mrb_define_method(mrb, xml_node_class,           "delete_child",             xml_node_delete_child,             ARGS_REQ(1));
-  mrb_define_method(mrb, xml_node_class,           "print",                    xml_node_print,                    ARGS_OPT(1));
+  mrb_define_method(mrb, xml_node_class,           "to_element",               xml_node_to_element,               MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "to_text",                  xml_node_to_text,                  MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "to_comment",               xml_node_to_comment,               MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "to_document",              xml_node_to_document,              MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "to_declaration",           xml_node_to_declaration,           MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "to_unknown",               xml_node_to_unknown,               MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "value",                    xml_node_value,                    MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "set_value",                xml_node_set_value,                MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_node_class,           "parent",                   xml_node_parent,                   MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "no_children",              xml_node_no_children,              MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "first_child",              xml_node_first_child,              MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "first_child_element",      xml_node_first_child_element,      MRB_ARGS_OPT(1));
+  mrb_define_method(mrb, xml_node_class,           "last_child",               xml_node_last_child,               MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "last_child_element",       xml_node_last_child_element,       MRB_ARGS_OPT(1));
+  mrb_define_method(mrb, xml_node_class,           "previous_sibling",         xml_node_previous_sibling,         MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "previous_sibling_element", xml_node_previous_sibling_element, MRB_ARGS_OPT(1));
+  mrb_define_method(mrb, xml_node_class,           "next_sibling",             xml_node_next_sibling,             MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "next_sibling_element",     xml_node_next_sibling_element,     MRB_ARGS_OPT(1));
+  mrb_define_method(mrb, xml_node_class,           "insert_end_child",         xml_node_insert_end_child,         MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_node_class,           "link_end_child",           xml_node_link_end_child,           MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_node_class,           "link_first_child",         xml_node_insert_first_child,       MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_node_class,           "link_after_child",         xml_node_insert_after_child,       MRB_ARGS_REQ(2));
+  mrb_define_method(mrb, xml_node_class,           "delete_children",          xml_node_delete_children,          MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_node_class,           "delete_child",             xml_node_delete_child,             MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_node_class,           "print",                    xml_node_print,                    MRB_ARGS_OPT(1));
 
   /* XMLDocument */
-  mrb_define_method(mrb, xml_document_class,       "initialize",               xml_document_initialize,           ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "to_document",              xml_document_to_document,          ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "parse",                    xml_document_parse,                ARGS_REQ(1));
-  mrb_define_method(mrb, xml_document_class,       "load_file",                xml_document_load_file,            ARGS_REQ(1));
-  mrb_define_method(mrb, xml_document_class,       "save_file",                xml_document_save_file,            ARGS_REQ(1)|ARGS_OPT(1));
-  mrb_define_method(mrb, xml_document_class,       "process_entities",         xml_document_process_entities,     ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "whitespace_mode",          xml_document_whitespace_mode,      ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "has_bom",                  xml_document_has_bom,              ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "set_bom",                  xml_document_set_bom,              ARGS_REQ(1));
-  mrb_define_method(mrb, xml_document_class,       "root_element",             xml_document_root_element,         ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "new_element",              xml_document_new_element,          ARGS_REQ(1));
-  mrb_define_method(mrb, xml_document_class,       "new_comment",              xml_document_new_comment,          ARGS_REQ(1));
-  mrb_define_method(mrb, xml_document_class,       "new_text",                 xml_document_new_text,             ARGS_REQ(1));
-  mrb_define_method(mrb, xml_document_class,       "new_declaration",          xml_document_new_declaration,      ARGS_OPT(1));
-  mrb_define_method(mrb, xml_document_class,       "new_unknown",              xml_document_new_unknown,          ARGS_REQ(1));
-  mrb_define_method(mrb, xml_document_class,       "delete_node",              xml_document_delete_node,          ARGS_REQ(1));
-  mrb_define_method(mrb, xml_document_class,       "error",                    xml_document_error,                ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "error_id",                 xml_document_error_id,             ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "get_error_str1",           xml_document_get_error_str1,       ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "get_error_str2",           xml_document_get_error_str2,       ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "print_error",              xml_document_print_error,          ARGS_NONE());
-  mrb_define_method(mrb, xml_document_class,       "clear",                    xml_document_clear,                ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "initialize",               xml_document_initialize,           MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "to_document",              xml_document_to_document,          MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "parse",                    xml_document_parse,                MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_document_class,       "load_file",                xml_document_load_file,            MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_document_class,       "save_file",                xml_document_save_file,            MRB_ARGS_REQ(1)|MRB_ARGS_OPT(1));
+  mrb_define_method(mrb, xml_document_class,       "process_entities",         xml_document_process_entities,     MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "whitespace_mode",          xml_document_whitespace_mode,      MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "has_bom",                  xml_document_has_bom,              MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "set_bom",                  xml_document_set_bom,              MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_document_class,       "root_element",             xml_document_root_element,         MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "new_element",              xml_document_new_element,          MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_document_class,       "new_comment",              xml_document_new_comment,          MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_document_class,       "new_text",                 xml_document_new_text,             MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_document_class,       "new_declaration",          xml_document_new_declaration,      MRB_ARGS_OPT(1));
+  mrb_define_method(mrb, xml_document_class,       "new_unknown",              xml_document_new_unknown,          MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_document_class,       "delete_node",              xml_document_delete_node,          MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_document_class,       "error",                    xml_document_error,                MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "error_id",                 xml_document_error_id,             MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "get_error_str1",           xml_document_get_error_str1,       MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "get_error_str2",           xml_document_get_error_str2,       MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "print_error",              xml_document_print_error,          MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_document_class,       "clear",                    xml_document_clear,                MRB_ARGS_NONE());
 
   /* XMLElement */
-  mrb_define_method(mrb, xml_element_class,        "initialize",               xml_element_initialize,            ARGS_NONE());
-  mrb_define_method(mrb, xml_element_class,        "name",                     xml_element_name,                  ARGS_NONE());
-  mrb_define_method(mrb, xml_element_class,        "set_name",                 xml_element_set_name,              ARGS_REQ(1));
-  mrb_define_method(mrb, xml_element_class,        "to_element",               xml_element_to_element,            ARGS_NONE());
-  mrb_define_method(mrb, xml_element_class,        "attribute",                xml_element_attribute,             ARGS_REQ(1)|ARGS_OPT(1));
-  mrb_define_method(mrb, xml_element_class,        "int_attribute",            xml_element_int_attribute,         ARGS_REQ(1));
-  mrb_define_method(mrb, xml_element_class,        "unsigned_attribute",       xml_element_unsigned_attribute,    ARGS_REQ(1));
-  mrb_define_method(mrb, xml_element_class,        "bool_attribute",           xml_element_bool_attribute,        ARGS_REQ(1));
-  mrb_define_method(mrb, xml_element_class,        "double_attribute",         xml_element_double_attribute,      ARGS_REQ(1));
-  mrb_define_method(mrb, xml_element_class,        "float_attribute",          xml_element_float_attribute,       ARGS_REQ(1));
-  mrb_define_method(mrb, xml_element_class,        "set_attribute",            xml_element_set_attribute,         ARGS_REQ(2));
-  mrb_define_method(mrb, xml_element_class,        "delete_attribute",         xml_element_delete_attribute,      ARGS_REQ(1));
-  mrb_define_method(mrb, xml_element_class,        "first_attribute",          xml_element_first_attribute,       ARGS_NONE());
-  mrb_define_method(mrb, xml_element_class,        "find_attribute",           xml_element_find_attribute,        ARGS_REQ(1));
-  mrb_define_method(mrb, xml_element_class,        "get_text",                 xml_element_get_text,              ARGS_NONE());
+  mrb_define_method(mrb, xml_element_class,        "initialize",               xml_element_initialize,            MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_element_class,        "name",                     xml_element_name,                  MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_element_class,        "set_name",                 xml_element_set_name,              MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_element_class,        "to_element",               xml_element_to_element,            MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_element_class,        "attribute",                xml_element_attribute,             MRB_ARGS_REQ(1)|MRB_ARGS_OPT(1));
+  mrb_define_method(mrb, xml_element_class,        "int_attribute",            xml_element_int_attribute,         MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_element_class,        "unsigned_attribute",       xml_element_unsigned_attribute,    MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_element_class,        "bool_attribute",           xml_element_bool_attribute,        MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_element_class,        "double_attribute",         xml_element_double_attribute,      MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_element_class,        "float_attribute",          xml_element_float_attribute,       MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_element_class,        "set_attribute",            xml_element_set_attribute,         MRB_ARGS_REQ(2));
+  mrb_define_method(mrb, xml_element_class,        "delete_attribute",         xml_element_delete_attribute,      MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_element_class,        "first_attribute",          xml_element_first_attribute,       MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_element_class,        "find_attribute",           xml_element_find_attribute,        MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_element_class,        "get_text",                 xml_element_get_text,              MRB_ARGS_NONE());
 
   /* XMLAttribute */
-  mrb_define_method(mrb, xml_const_attribute_class, "initialize",              xml_attribute_initialize,          ARGS_NONE());
-  mrb_define_method(mrb, xml_const_attribute_class, "name",                    xml_attribute_name,                ARGS_NONE());
-  mrb_define_method(mrb, xml_const_attribute_class, "value",                   xml_attribute_value,               ARGS_NONE());
-  mrb_define_method(mrb, xml_const_attribute_class, "next",                    xml_attribute_next,                ARGS_NONE());
-  mrb_define_method(mrb, xml_const_attribute_class, "int_value",               xml_attribute_int_value,           ARGS_NONE());
-  mrb_define_method(mrb, xml_const_attribute_class, "unsigned_value",          xml_attribute_unsigned_value,      ARGS_NONE());
-  mrb_define_method(mrb, xml_const_attribute_class, "bool_value",              xml_attribute_bool_value,          ARGS_NONE());
-  mrb_define_method(mrb, xml_const_attribute_class, "double_value",            xml_attribute_double_value,        ARGS_NONE());
-  mrb_define_method(mrb, xml_const_attribute_class, "float_value",             xml_attribute_float_value,         ARGS_NONE());
-  mrb_define_method(mrb, xml_attribute_class,       "set_attribute",           xml_attribute_set_attribute,       ARGS_REQ(1));
+  mrb_define_method(mrb, xml_const_attribute_class, "initialize",              xml_attribute_initialize,          MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_const_attribute_class, "name",                    xml_attribute_name,                MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_const_attribute_class, "value",                   xml_attribute_value,               MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_const_attribute_class, "next",                    xml_attribute_next,                MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_const_attribute_class, "int_value",               xml_attribute_int_value,           MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_const_attribute_class, "unsigned_value",          xml_attribute_unsigned_value,      MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_const_attribute_class, "bool_value",              xml_attribute_bool_value,          MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_const_attribute_class, "double_value",            xml_attribute_double_value,        MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_const_attribute_class, "float_value",             xml_attribute_float_value,         MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_attribute_class,       "set_attribute",           xml_attribute_set_attribute,       MRB_ARGS_REQ(1));
 
   /* XMLComment */
-  mrb_define_method(mrb, xml_comment_class,         "initialize",              xml_comment_initialize,            ARGS_NONE());
-  mrb_define_method(mrb, xml_comment_class,         "to_comment",              xml_comment_to_comment,            ARGS_NONE());
+  mrb_define_method(mrb, xml_comment_class,         "initialize",              xml_comment_initialize,            MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_comment_class,         "to_comment",              xml_comment_to_comment,            MRB_ARGS_NONE());
 
   /* XMLText */
-  mrb_define_method(mrb, xml_text_class,            "initialize",              xml_text_initialize,               ARGS_NONE());
-  mrb_define_method(mrb, xml_text_class,            "to_text",                 xml_text_to_text,                  ARGS_NONE());
-  mrb_define_method(mrb, xml_text_class,            "set_cdata",               xml_text_set_cdata,                ARGS_REQ(1));
-  mrb_define_method(mrb, xml_text_class,            "cdata",                   xml_text_cdata,                    ARGS_NONE());
+  mrb_define_method(mrb, xml_text_class,            "initialize",              xml_text_initialize,               MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_text_class,            "to_text",                 xml_text_to_text,                  MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_text_class,            "set_cdata",               xml_text_set_cdata,                MRB_ARGS_REQ(1));
+  mrb_define_method(mrb, xml_text_class,            "cdata",                   xml_text_cdata,                    MRB_ARGS_NONE());
 
   /* XMLDeclaration */
-  mrb_define_method(mrb, xml_declaration_class,     "initialize",              xml_declaration_initialize,        ARGS_NONE());
-  mrb_define_method(mrb, xml_declaration_class,     "to_declaration",          xml_declaration_to_declaration,    ARGS_NONE());
+  mrb_define_method(mrb, xml_declaration_class,     "initialize",              xml_declaration_initialize,        MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_declaration_class,     "to_declaration",          xml_declaration_to_declaration,    MRB_ARGS_NONE());
 
   /* XMLUnknown */
-  mrb_define_method(mrb, xml_unknown_class,         "initialize",              xml_unknown_initialize,            ARGS_NONE());
-  mrb_define_method(mrb, xml_unknown_class,         "to_unknown",              xml_unknown_to_unknown,            ARGS_NONE());
+  mrb_define_method(mrb, xml_unknown_class,         "initialize",              xml_unknown_initialize,            MRB_ARGS_NONE());
+  mrb_define_method(mrb, xml_unknown_class,         "to_unknown",              xml_unknown_to_unknown,            MRB_ARGS_NONE());
 }
 
 extern "C" void
