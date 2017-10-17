@@ -455,7 +455,7 @@ static mrb_value
 xml_document_parse(mrb_state *mrb, mrb_value self)
 {
   char *xml;
-  int len = 0;
+  mrb_int len = 0;
   XMLDocument *doc = static_cast<XMLDocument*>(DATA_PTR(self));
   mrb_get_args(mrb, "s", &xml, &len);
   XMLError error = doc->Parse(xml, static_cast<size_t>(len));
